@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "917787443553",
+    "project_id": "smartcheck-in-7e73b",
+    "storage_bucket": "smartcheck-in-7e73b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917787443553:android:1fdc46e9d956f0390cc520",
+        "android_client_info": {
+          "package_name": "com.example.smartclass_check"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDVH9huDYsn5ApvBeSCdPg0FjZR5v-wQE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
