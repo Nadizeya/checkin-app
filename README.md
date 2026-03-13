@@ -1,104 +1,104 @@
-# Smart Class Check-in & Learning Reflection App
+# แอปพลิเคชันเช็คอินและสะท้อนการเรียนรู้ชั้นเรียนอัจฉริยะ
 
-Course: 1305216 Mobile Application Development — Midterm Lab Exam
-
----
-
-## Project Description
-
-A Flutter mobile application that allows university students to:
-- Check in to class using GPS location + QR code scanning
-- Fill in a pre-class learning reflection form with mood tracking
-- Check out after class with a post-class reflection
-- View session history and weekly progress
+หลักสูตร: 1305216 การพัฒนาแอปพลิเคชันมือถือ — การสอบกลางภาค
 
 ---
 
-## Tech Stack
+## คำอธิบายโปรเจกต์
 
-| Layer | Technology |
+แอปพลิเคชัน Flutter ที่อนุญาตให้นักศึกษามหาวิทยาลัย:
+- เช็คอินเข้าชั้นเรียนโดยใช้ตำแหน่ง GPS + สแกน QR code
+- กรอกแบบฟอร์มสะท้อนการเรียนรู้ก่อนชั้นเรียนพร้อมติดตามอารมณ์
+- เช็คเอาท์หลังชั้นเรียนพร้อมสะท้อนหลังชั้นเรียน
+- ดูประวัติเซสชันและความก้าวหน้า weekly
+
+---
+
+## เทคโนโลยีที่ใช้
+
+| ชั้น | เทคโนโลยี |
 |-------|-----------|
 | Framework | Flutter (Dart) |
-| QR Scanning | mobile_scanner ^5.1.1 |
+| สแกน QR | mobile_scanner ^5.1.1 |
 | GPS | geolocator ^11.0.0 |
-| Local Storage | sqflite ^2.3.3 |
-| Unique IDs | uuid ^4.4.0 |
-| Deployment | Firebase Hosting |
+| เก็บข้อมูลท้องถิ่น | sqflite ^2.3.3 |
+| ID เฉพาะ | uuid ^4.4.0 |
+| การเผยแพร่ | Firebase Hosting |
 
 ---
 
-## Project Structure
+## โครงสร้างโปรเจกต์
 
 ```
 lib/
-├── main.dart                  # App entry point
-├── theme.dart                 # Colors and theme config
+├── main.dart                  # จุดเริ่มต้นของแอป
+├── theme.dart                 # การตั้งค่าสีและธีม
 ├── db/
-│   └── database_helper.dart   # SQLite database
+│   └── database_helper.dart   # ฐานข้อมูล SQLite
 └── screens/
-    ├── login_screen.dart      # Login page
-    ├── home_screen.dart       # Home with stats + nav
-    ├── checkin_screen.dart    # Check-in flow
-    ├── finish_screen.dart     # Finish class flow
-    ├── history_screen.dart    # Session history list
-    └── progress_screen.dart   # Mood chart + streak
+    ├── login_screen.dart      # หน้าล็อกอิน
+    ├── home_screen.dart       # หน้าหลักพร้อมสถิติ + นำทาง
+    ├── checkin_screen.dart    # กระบวนการเช็คอิน
+    ├── finish_screen.dart     # กระบวนการเสร็จชั้นเรียน
+    ├── history_screen.dart    # รายการประวัติเซสชัน
+    └── progress_screen.dart   # แผนภูมิอารมณ์ + สตรีค
 ```
 
 ---
 
-## Setup Instructions
+## คำแนะนำการตั้งค่า
 
-### 1. Prerequisites
+### 1. ข้อกำหนดเบื้องต้น
 - Flutter SDK >= 3.0.0
-- Android Studio or VS Code
-- Android device or emulator (API 21+)
+- Android Studio หรือ VS Code
+- อุปกรณ์ Android หรือ emulator (API 21+)
 
-### 2. Install dependencies
+### 2. ติดตั้ง dependencies
 ```bash
 flutter pub get
 ```
 
-### 3. Run the app
+### 3. รันแอป
 ```bash
 flutter run
 ```
 
-### 4. Build for release
+### 4. บิลด์สำหรับ release
 ```bash
 flutter build apk --release
 ```
 
 ---
 
-## Firebase Configuration
+## การตั้งค่า Firebase
 
-### Deploy to Firebase Hosting
+### เผยแพร่ไปยัง Firebase Hosting
 ```bash
-# Install Firebase CLI
+# ติดตั้ง Firebase CLI
 npm install -g firebase-tools
 
-# Login
+# ล็อกอิน
 firebase login
 
-# Initialize (select Hosting)
+# เริ่มต้น (เลือก Hosting)
 firebase init
 
-# Build Flutter Web
+# บิลด์ Flutter Web
 flutter build web
 
-# Deploy
+# เผยแพร่
 firebase deploy
 ```
 
-### Firebase Hosting setup
-- Build output directory: `build/web`
-- The deployed URL will be: `https://YOUR-PROJECT-ID.web.app`
+### การตั้งค่า Firebase Hosting
+- โฟลเดอร์ผลลัพธ์บิลด์: `build/web`
+- URL ที่เผยแพร่จะเป็น: `https://YOUR-PROJECT-ID.web.app`
 
 ---
 
-## Android Permissions Required
+## สิทธิ์ Android ที่จำเป็น
 
-Add to `android/app/src/main/AndroidManifest.xml`:
+เพิ่มใน `android/app/src/main/AndroidManifest.xml`:
 ```xml
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 <uses-permission android:name="android.permission.CAMERA" />
@@ -107,34 +107,34 @@ Add to `android/app/src/main/AndroidManifest.xml`:
 
 ---
 
-## AI Usage Report
+## รายงานการใช้ AI
 
-**Tools used:** Claude (Anthropic)
+**เครื่องมือที่ใช้:** Claude (Anthropic)
 
-**What AI helped generate:**
-- Initial Flutter UI scaffolding for all screens
-- SQLite database schema and helper class
-- GPS and QR code integration boilerplate
-- Theme and color system setup
+**สิ่งที่ AI ช่วยสร้าง:**
+- โครงร่าง UI Flutter เริ่มต้นสำหรับหน้าจอทั้งหมด
+- สคีมาฐานข้อมูล SQLite และคลาสช่วยเหลือ
+- บูเลอร์เพลตการรวม GPS และ QR code
+- การตั้งค่าธีมและระบบสี
 
-**What I modified / implemented myself:**
-- Form validation logic and error handling
-- Navigation flow between screens (check-in → finish → home)
-- Session duration calculation
-- Mood selector interaction states
-- Data query logic for stats (avg mood, session count)
-- Weekly mood chart data aggregation
-- Attendance streak tile logic (14-day window)
+**สิ่งที่ฉันแก้ไข / ใช้งานเอง:**
+- ลอจิกการตรวจสอบฟอร์มและการจัดการข้อผิดพลาด
+- กระบวนการนำทางระหว่างหน้าจอ (เช็คอิน → เสร็จ → หน้าหลัก)
+- การคำนวณระยะเวลาเซสชัน
+- สถานะการโต้ตอบของตัวเลือกอารมณ์
+- ลอจิกการคิวรีข้อมูลสำหรับสถิติ (อารมณ์เฉลี่ย, จำนวนเซสชัน)
+- การรวมข้อมูลแผนภูมิอารมณ์ weekly
+- ลอจิกไทล์สตรีคการเข้าร่วม (หน้าต่าง 14 วัน)
 
 ---
 
-## Screens
+## หน้าจอ
 
-| Screen | Description |
+| หน้าจอ | คำอธิบาย |
 |--------|-------------|
-| Login | Student ID + password authentication |
-| Home | Stats, last session, check-in button, bottom nav |
-| Check-in | GPS + QR scan + reflection form + mood |
-| Finish Class | QR scan + GPS + learned today + feedback |
-| History | List of all past sessions with badges |
-| Progress | Weekly mood bar chart + 14-day streak |
+| ล็อกอิน | การยืนยันตัวตนด้วยรหัสนักศึกษา + รหัสผ่าน |
+| หน้าหลัก | สถิติ, เซสชันล่าสุด, ปุ่มเช็คอิน, นำทางด้านล่าง |
+| เช็คอิน | GPS + สแกน QR + ฟอร์มสะท้อน + อารมณ์ |
+| เสร็จชั้นเรียน | สแกน QR + GPS + เรียนรู้วันนี้ + ข้อเสนอแนะ |
+| ประวัติ | รายการเซสชันที่ผ่านมา พร้อมเหรียญตรา |
+| ความก้าวหน้า | แผนภูมิแท่งอารมณ์ weekly + สตรีค 14 วัน |
